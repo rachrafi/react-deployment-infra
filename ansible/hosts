@@ -1,0 +1,13 @@
+[jenkins-master]
+10.1.1.248
+
+[jenkins-master:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/react-lab
+
+[jenkins-slave]
+10.1.1.178
+
+[jenkins-slave:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/react-lab
