@@ -6,10 +6,9 @@ resource "aws_instance" "demo-server" {
   ami           = "ami-053b0d53c279acc90"
   instance_type = "t3.medium"
   key_name      = "react-lab"
-  //security_groups = [ "demo-sg" ]
   vpc_security_group_ids = [aws_security_group.demo-sg.id]
   subnet_id              = aws_subnet.react-lab-public-subnet-01.id
-  for_each               = toset(["jenkins-master", "build-slave", "ansible"])
+  for_each               = toset(["react-jenkins-master", "react-build-slave", "react-ansible"])
   tags = {
     Name = "${each.key}"
   }
